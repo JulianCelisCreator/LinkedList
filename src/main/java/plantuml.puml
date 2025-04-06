@@ -1,0 +1,48 @@
+@startuml
+
+' Clase abstracta
+
+abstract cultivo {
+    -codigoLote: String;
+    -epocaSiembra: String;
+    -epocaCosecha: String;
+    -exposicionSolar: String;
+}
+
+' Clase concreta
+class CultivoRegadio {
+    -frecuenciaRiego: String
+    -necesidadesAgua: double
+    -plagas: String
+}
+
+' Clase concreta
+class CultivoSecano {
+    -maquinariaIndustrial: String
+}
+
+
+' Relaciones de herencia
+Cultivo <|-- CultivoSecano
+Cultivo <|-- CultivoRegadio
+CultivoSecano <|-- cereales
+CultivoSecano <|-- legumbres
+CultivoRegadio <|-- hortalizas
+CultivoRegadio <|-- arbolFrutal
+cereales <|-- trigo
+cereales <|-- avena
+cereales <|-- maiz
+cereales <|-- centeno
+legumbres <|-- garbanzo
+legumbres <|-- lenteja
+legumbres <|-- alubia
+hortalizas <|-- tomate
+hortalizas <|-- pimiento
+hortalizas <|-- vainas
+hortalizas <|-- acelgas
+hortalizas <|-- lechugas
+arbolFrutal  <|-- manzana
+arbolFrutal  <|-- cerezo
+arbolFrutal  <|-- ciruelo
+
+@enduml
